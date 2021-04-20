@@ -1,0 +1,11 @@
+.tui-list__item {
+  cursor: pointer;
+  &:before {
+    content: none;
+  }
+  &.active {
+    &:before {
+      content: ' ';
+    }
+  }
+}

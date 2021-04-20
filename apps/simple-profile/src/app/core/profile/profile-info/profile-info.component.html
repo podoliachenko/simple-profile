@@ -1,0 +1,14 @@
+<div class="container" *ngIf="profile$ | async as profile">
+  <div class="profile-header">
+    <div class="profile-image">
+      <img src="https://eu.ui-avatars.com/api/?background=526ed3&color=fff&name={{profile.username}}&length=1&size=128">
+    </div>
+    <div class="profile-info">
+      <span class="key" *ngIf="profile.username as value"><span class="value">username: {{value}}</span></span>
+      <span class="key" *ngIf="profile.birthday as value"><span class="value">birthday: {{value}}</span></span>
+      <span class="key" *ngIf="profile.firstName as value"><span class="value">firstName: {{value}}</span></span>
+      <span class="key" *ngIf="profile.gender as value"><span class="value">gender: {{value}}</span></span>
+      <span class="key" *ngIf="profile.lastName as value"><span class="value">lastName: {{value}}</span></span>
+    </div>
+  </div>
+</div>

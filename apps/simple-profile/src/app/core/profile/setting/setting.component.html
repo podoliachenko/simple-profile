@@ -1,0 +1,64 @@
+<div class="container tui-container_adaptive" *ngIf="profile$ | async as profile">
+  <div class="tui-row_adaptive tui-row">
+    <div class="tui-col_md-6 tui-col_sm-12 tui-col_s-12 tui-col_xl-6 tui-col_xs-12">
+      <h2>Common</h2>
+      <tui-input
+        class="form-control"
+        [ngModel]="profile.firstName"
+        tuiTextfieldSize="m"
+        [tuiTextfieldLabelOutside]="true"
+      >
+        FirstName
+      </tui-input>
+
+      <tui-input
+        class="form-control"
+        tuiTextfieldSize="m"
+        [tuiTextfieldLabelOutside]="true"
+      >
+        LastName
+      </tui-input>
+
+      <tui-input
+        class="form-control"
+        tuiTextfieldSize="m"
+        [tuiTextfieldLabelOutside]="true"
+      >
+        Birthday
+      </tui-input>
+      <tui-input
+        class="form-control"
+        tuiTextfieldSize="m"
+        [tuiTextfieldLabelOutside]="true"
+      >
+        Gender
+      </tui-input>
+      <button tuiButton
+              size="m"
+              class="submit">Save
+      </button>
+    </div>
+    <div class="tui-col_md-6 tui-col_sm-12 tui-col_s-12 tui-col_xl-6 tui-col_xs-12">
+      <h2>Change password</h2>
+      <tui-input-password
+        class="form-control"
+        tuiTextfieldSize="m"
+        [tuiTextfieldLabelOutside]="true"
+      >
+        Type an email
+      </tui-input-password>
+      <tui-input-password
+        class="form-control"
+        tuiTextfieldSize="m"
+        [tuiTextfieldLabelOutside]="true"
+      >
+        Type an email
+      </tui-input-password>
+      <button tuiButton
+              size="m"
+              class="submit">Save
+      </button>
+
+    </div>
+  </div>
+</div>
