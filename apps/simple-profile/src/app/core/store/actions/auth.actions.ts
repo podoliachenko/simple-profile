@@ -1,3 +1,5 @@
+import { RegistrationParams } from '@simple-profile/api-interfaces';
+
 export interface SetNewPasswordPayload {
   username: string;
   token: string;
@@ -8,6 +10,7 @@ export interface LoginPayload {
   username: string;
   password: string;
 }
+
 
 export type RegisterPayload = LoginPayload
 
@@ -29,6 +32,13 @@ export class Login {
   static readonly type: string = '[Auth] Login';
 
   constructor(public payload: LoginPayload) {
+  }
+}
+
+export class Registration {
+  static readonly type: string = '[Auth] Registration';
+
+  constructor(public payload: RegistrationParams) {
   }
 }
 

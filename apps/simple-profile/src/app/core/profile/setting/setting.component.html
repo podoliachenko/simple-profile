@@ -6,6 +6,7 @@
         class="form-control"
         [ngModel]="profile.firstName"
         tuiTextfieldSize="m"
+        #firstName
         [tuiTextfieldLabelOutside]="true"
       >
         FirstName
@@ -13,7 +14,9 @@
 
       <tui-input
         class="form-control"
+        [ngModel]="profile.lastName"
         tuiTextfieldSize="m"
+        #lastName
         [tuiTextfieldLabelOutside]="true"
       >
         LastName
@@ -22,19 +25,31 @@
       <tui-input
         class="form-control"
         tuiTextfieldSize="m"
+        [ngModel]="profile.birthday"
+        #birthday
         [tuiTextfieldLabelOutside]="true"
       >
         Birthday
       </tui-input>
       <tui-input
         class="form-control"
+        name="gender"
+        id="gender"
         tuiTextfieldSize="m"
+        [ngModel]="profile.gender"
+        #gender
         [tuiTextfieldLabelOutside]="true"
       >
         Gender
       </tui-input>
       <button tuiButton
               size="m"
+              (click)="saveInfo({
+              firstName: firstName.value,
+              lastName: lastName.value,
+              gender: gender.value,
+              birthday: birthday.value
+              })"
               class="submit">Save
       </button>
     </div>

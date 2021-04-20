@@ -1,6 +1,6 @@
 import { Action, Selector, State, StateContext, StateToken } from '@ngxs/store';
 import { Injectable } from '@angular/core';
-import { Login, Logout, SetToken } from '../actions/auth.actions';
+import { Login, Logout, Registration, SetToken } from '../actions/auth.actions';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
@@ -52,6 +52,16 @@ export class AuthState {
   @Action(Login)
   login(ctx: StateContext<AuthStateModel>, action: Login): Observable<AuthResponseModel> {
     return this._authService.logIn(action.payload).pipe(
+      tap((result: AuthResponseModel) => {
+        ctx.patchState({
+          token: result.access_token
+        });
+      })
+    );
+  }
+  @Action(Registration)
+  registration(ctx: StateContext<AuthStateModel>, action: Registration): Observable<AuthResponseModel> {
+    return this._authService.registration(action.payload).pipe(
       tap((result: AuthResponseModel) => {
         ctx.patchState({
           token: result.access_token

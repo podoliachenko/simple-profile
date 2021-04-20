@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '@simple-profile/api-interfaces';
+import { PatchProfileParams, User } from '@simple-profile/api-interfaces';
 import { ProfileService } from '../../services/profile.service';
 
 @Component({
@@ -19,4 +19,7 @@ export class SettingComponent implements OnInit {
     this.profile$ = this._profileService.getProfile();
   }
 
+  saveInfo(payload: PatchProfileParams) {
+    this.profile$ = this._profileService.changeUserInfo(payload);
+  }
 }

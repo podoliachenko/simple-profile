@@ -9,6 +9,7 @@ import { SettingComponent } from './setting/setting.component';
 import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 import { TuiButtonModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { FormsModule } from '@angular/forms';
+import { UserInfoComponent } from './setting/user-info/user-info.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     ProfileInfoComponent,
     SidebarComponent,
     ProfileComponent,
-    SettingComponent
+    SettingComponent,
+    UserInfoComponent
   ],
   imports: [
     CommonModule,

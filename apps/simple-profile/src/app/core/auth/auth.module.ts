@@ -5,12 +5,14 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TuiFieldErrorModule, TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
-import { TuiButtonModule, TuiErrorModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiErrorModule, TuiLinkModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { SingUpComponent } from './sing-up/sing-up.component';
 
 
 @NgModule({
   declarations: [
-    SignInComponent
+    SignInComponent,
+    SingUpComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { TuiButtonModule, TuiErrorModule, TuiTextfieldControllerModule } from '@
     TuiTextfieldControllerModule,
     TuiButtonModule,
     TuiFieldErrorModule,
-    TuiErrorModule
+    TuiErrorModule,
+    TuiLinkModule
   ]
 })
 export class AuthModule { }

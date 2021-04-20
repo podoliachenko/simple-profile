@@ -1,10 +1,14 @@
 <div class="auth-container">
-  <h1 class="title">Login</h1>
+  <h1 class="title">Registration</h1>
   <form [formGroup]="form" (ngSubmit)="submit()">
     <tui-input formControlName="username" tuiTextfieldSize="m" class="form-control">
       Type an username
     </tui-input>
     <tui-input-password formControlName="password" tuiTextfieldSize="m" class="form-control">
+      Type an password
+    </tui-input-password>
+
+    <tui-input-password formControlName="confirmPassword" tuiTextfieldSize="m" class="form-control">
       Type an password
     </tui-input-password>
 
@@ -16,11 +20,11 @@
       class="submit"
       [showLoader]="inProgress"
     >
-      Login
+      Registration
     </button>
   </form>
   <tui-error [error]="error"></tui-error>
   <div class="link">
-    <a routerLink="/auth/registration" tuiLink>Registration</a>
+    <a routerLink="/auth/login" tuiLink>Login</a>
   </div>
 </div>
